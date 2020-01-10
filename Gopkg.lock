@@ -30,6 +30,14 @@
   version = "v1.17.2"
 
 [[projects]]
+  digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
+  name = "github.com/satori/go.uuid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
+
+[[projects]]
   digest = "1:8548c309c65a85933a625be5e7d52b6ac927ca30c56869fae58123b8a77a75e1"
   name = "github.com/stretchr/testify"
   packages = ["assert"]
@@ -58,6 +66,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/rs/zerolog",
+    "github.com/satori/go.uuid",
     "github.com/stretchr/testify/assert",
     "github.com/tylerb/gls",
   ]
