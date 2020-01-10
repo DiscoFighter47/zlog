@@ -26,37 +26,61 @@ var logger = zerolog.New(zerolog.ConsoleWriter{
 }).With().Timestamp().Logger().Hook(ridHook{})
 
 // Info ...
-var Info = logger.Info().Msg
+func Info(msg string) {
+	logger.Info().Msg(msg)
+}
 
 // Infof ...
-var Infof = logger.Info().Msgf
+func Infof(format string, v ...interface{}) {
+	logger.Info().Msgf(format, v...)
+}
 
 // Debug ...
-var Debug = logger.Debug().Msg
+func Debug(msg string) {
+	logger.Debug().Msg(msg)
+}
 
 // Debugf ...
-var Debugf = logger.Debug().Msgf
+func Debugf(format string, v ...interface{}) {
+	logger.Debug().Msgf(format, v...)
+}
 
 // Warn ...
-var Warn = logger.Warn().Msg
+func Warn(msg string) {
+	logger.Warn().Msg(msg)
+}
 
 // Warnf ...
-var Warnf = logger.Warn().Msgf
+func Warnf(format string, v ...interface{}) {
+	logger.Warn().Msgf(format, v...)
+}
 
 // Error ...
-var Error = logger.Error().Msg
+func Error(msg string) {
+	logger.Error().Msg(msg)
+}
 
 // Errorf ...
-var Errorf = logger.Error().Msgf
-
-// Fatal ...
-var Fatal = logger.Fatal().Msg
-
-// Fatalf ...
-var Fatalf = logger.Fatal().Msgf
+func Errorf(format string, v ...interface{}) {
+	logger.Error().Msgf(format, v...)
+}
 
 // Panic ...
-var Panic = logger.Panic().Msg
+func Panic(msg string) {
+	logger.Panic().Msg(msg)
+}
 
 // Panicf ...
-var Panicf = logger.Panic().Msgf
+func Panicf(format string, v ...interface{}) {
+	logger.Panic().Msgf(format, v...)
+}
+
+// Fatal ...
+func Fatal(msg string) {
+	logger.Fatal().Msg(msg)
+}
+
+// Fatalf ...
+func Fatalf(format string, v ...interface{}) {
+	logger.Fatal().Msgf(format, v...)
+}
