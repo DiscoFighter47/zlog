@@ -1,18 +1,20 @@
-package zlog
+package zlog_test
 
 import (
 	"net/http"
 	"testing"
+
+	"github.com/DiscoFighter47/zlog"
 )
 
 func testHandler() http.HandlerFunc {
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		Logger.Info().Msg("Hello World!")
+		zlog.Info("Hello World!")
 	}
 	return http.HandlerFunc(fn)
 }
 
 func TestGatekeeper(t *testing.T) {
-	svr := GenReqID(testHandler())
+	svr := zlog.GenReqID(testHandler())
 	svr.ServeHTTP(nil, nil)
 }
