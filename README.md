@@ -1,5 +1,5 @@
 # :memo: zlog
-> You don't know what it's like, you don't have a clue
+> You don't know what it's like, you don't have a clue  
 If you did you'd find yourselves doing the same thing too
 
 Sugared logger for console with request_id.
@@ -59,5 +59,5 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## :question: FAQ
 
-1. Why not just use context?
+1. Why not just use context?  
 Passing context as the first perimeter is a common norm at [Google](https://about.google/) (and many other tech giants). I'll start using context for logging when Google hires me :smile:.
