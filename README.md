@@ -5,6 +5,7 @@ If you did you'd find yourselves doing the same thing too
 Sugared logger for console with request_id.
 
 ![](image/zlog_gopher.png)
+*source: gopherize.me*
 
 ## :traffic_light: Disclaimer
 
