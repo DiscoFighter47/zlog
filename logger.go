@@ -25,62 +25,62 @@ var logger = zerolog.New(zerolog.ConsoleWriter{
 	},
 }).With().Timestamp().Logger().Hook(ridHook{})
 
-// Info ...
+// Info prints a new message with info level
 func Info(msg string) {
 	logger.Info().Msg(msg)
 }
 
-// Infof ...
+// Infof prints a new formated message with info level
 func Infof(format string, v ...interface{}) {
 	logger.Info().Msgf(format, v...)
 }
 
-// Debug ...
+// Debug prints a new message with debug level
 func Debug(msg string) {
 	logger.Debug().Msg(msg)
 }
 
-// Debugf ...
+// Debugf prints a new formatted message with debug level
 func Debugf(format string, v ...interface{}) {
 	logger.Debug().Msgf(format, v...)
 }
 
-// Warn ...
+// Warn prints a new message with warn level
 func Warn(msg string) {
 	logger.Warn().Msg(msg)
 }
 
-// Warnf ...
+// Warnf prints a new formatted message with warn level
 func Warnf(format string, v ...interface{}) {
 	logger.Warn().Msgf(format, v...)
 }
 
-// Error ...
+// Error prints a new message with error level
 func Error(msg string) {
 	logger.Error().Msg(msg)
 }
 
-// Errorf ...
+// Errorf prints a new formatted message with error level
 func Errorf(format string, v ...interface{}) {
 	logger.Error().Msgf(format, v...)
 }
 
-// Panic ...
+// Panic prints a new message with panic level and throws a panic
 func Panic(msg string) {
 	logger.Panic().Msg(msg)
 }
 
-// Panicf ...
+// Panicf prints a new formatted message with panic level and throws a panic
 func Panicf(format string, v ...interface{}) {
 	logger.Panic().Msgf(format, v...)
 }
 
-// Fatal ...
+// Fatal prints a new message with fatal level and kills the system
 func Fatal(msg string) {
 	logger.Fatal().Msg(msg)
 }
 
-// Fatalf ...
+// Fatalf prints a new formatted message with fatal level and kills the system
 func Fatalf(format string, v ...interface{}) {
 	logger.Fatal().Msgf(format, v...)
 }
