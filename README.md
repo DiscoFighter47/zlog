@@ -17,40 +17,29 @@ go get github.com/DiscoFighter47/zlog
 ```
 
 ## :eyeglasses: Examples
-**Middleware**
 ```
 package main
 
 import (
-    "net/http"
+	"net/http"
 
-    "github.com/DiscoFighter47/zlog"
+	"github.com/DiscoFighter47/zlog"
 )
 
-func main() {
-    http.Handle("/", zlog.GenReqID(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-        zlog.Info("Hello World!")
-    })))
-    http.ListenAndServe(":3000", nil)
+func call() {
+	zlog.Info("Hello Universe!")
 }
 
-// Output: 2020-02-08T14:28:35+06:00 [info ] Hello World! request_id:d9b1e20e-ef83-4aaa-a12a-d696f96e4929
-```
-
-**Task Log**
-```
-package main
-
-import (
-    "github.com/DiscoFighter47/zlog"
-)
-
 func main() {
-    zlog.SetReqID()
-    zlog.Info("Hello World!")
+	http.Handle("/", zlog.GenReqID(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		zlog.Info("Hello World!")
+		call()
+	})))
+	http.ListenAndServe(":3000", nil)
 }
 
-// Output: 2020-02-08T14:33:54+06:00 [info ] Hello World! request_id:5668c859-5685-40e0-9ccb-99ece2cf7b84
+// Output: 2020-02-08T19:54:10+06:00 [info ] Hello World! request_id:92fb565f-3856-4a51-a0e9-744a5fad12fc
+// Output: 2020-02-08T19:54:10+06:00 [info ] Hello Universe! request_id:92fb565f-3856-4a51-a0e9-744a5fad12fc
 ```
 
 ## :unlock: License
